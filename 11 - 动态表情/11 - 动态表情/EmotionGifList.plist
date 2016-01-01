@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>/点头</key>
+	<string>gifEmotion_6</string>
+	<key>/我撞</key>
+	<string>gifEmotion_5</string>
+	<key>/烧烤</key>
+	<string>gifEmotion_4</string>
+	<key>/奥特曼</key>
+	<string>gifEmotion_3</string>
+	<key>/咸蛋超人</key>
+	<string>gifEmotion_2</string>
+	<key>/飞翔</key>
+	<string>gifEmotion_1</string>
+	<key>/心烦</key>
+	<string>gifEmotion_0</string>
+</dict>
+</plist>
