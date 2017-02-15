@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "B2CBDD9BE3727E57984017C50D692600B2AD0D06",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B2CBDD9BE3727E57984017C50D692600B2AD0D06" : 9223372036854775807,
+    "DDE97A45152D06BAB7D0DE50BBF46B97CB854B85" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FD3116A7-A2A4-47BA-9EC3-939DA44548A3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B2CBDD9BE3727E57984017C50D692600B2AD0D06" : "CFGifEmotionDemo\/",
+    "DDE97A45152D06BAB7D0DE50BBF46B97CB854B85" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "11 - 动态表情",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "11 - 动态表情\/11 - 动态表情.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yuchuanfeng\/CFGifEmotionDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B2CBDD9BE3727E57984017C50D692600B2AD0D06"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yuchuanfeng\/CFHoveringTableViewDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DDE97A45152D06BAB7D0DE50BBF46B97CB854B85"
+    }
+  ]
+}

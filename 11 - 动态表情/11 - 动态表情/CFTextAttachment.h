@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define gifRect CGRectMake(0, 0, 60, 50)
+
 @interface CFTextAttachment : NSTextAttachment
 @property (nonatomic, copy) NSString *gifName;
 @end

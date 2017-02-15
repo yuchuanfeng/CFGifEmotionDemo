@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 @interface CFTextModel : NSObject
 
 @property (nonatomic, strong) NSMutableAttributedString *attributedString;
 @property (nonatomic, copy) NSString *contentString;
+@property (nonatomic, assign) CGFloat height;
 @end

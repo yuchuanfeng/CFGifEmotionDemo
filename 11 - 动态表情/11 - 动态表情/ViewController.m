@@ -10,21 +10,58 @@
 #import "UIImage+GIF.h"
 #import "CFTextModel.h"
 #import "CFTextView.h"
+#import "CFTableViewCell.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet CFTextView *textView;
-
+@property (nonatomic, strong) NSMutableArray *models;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    CFTextModel* model = [[CFTextModel alloc] init];
-    model.contentString = @"/咸蛋超人“没人在乎你怎样在深夜痛哭，/飞翔/飞翔/飞翔也没人在乎你辗转反侧的要熬几个秋。外人只看结果，/奥特曼自己独撑过程。/点头等你明白了这个道理，便不会再在人前矫情，/我撞四处诉说以求宽慰。/烧烤”当你知道了许多真实、虚假的东西，/咸蛋超人也就没有那么多酸情了。你越来越沉默，越来越不想说。/心烦";
-    self.textView.attributedText = model.attributedString;
+    
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.models = [[NSMutableArray alloc] init];
+    for ( int i = 0; i<100; i++ )
+    {
+        CFTextModel* model = [[CFTextModel alloc] init];
+        if (i % 2)
+        {
+           model.contentString = @"/咸蛋超人“没人在乎你怎样在深夜痛哭，/飞翔/飞翔/飞翔也没人在乎你辗转反侧的要熬几个/我撞秋。/我撞";
+        }else{
+            model.contentString = @"/点头等你明白了这个道理，便不会再在人前矫情，/我撞四处诉说以求宽慰。/烧烤”当你知道了许多真实、虚假的东西，/我撞也就没有那么多酸情了。你越来越沉默，越来越不想说。/心烦";
+            [model.attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0, model.attributedString.length)];
+        }
+        [self.models addObject:model];
+    }
+//    self.textView.attributedText = model.attributedString;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 100;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CFTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    CFTextModel* model = self.models[indexPath.row];
+    cell.textView.attributedText = model.attributedString;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CFTextModel* model = self.models[indexPath.row];
+    return model.height;
+}
+
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return 40;
+//}
 
 
 @end

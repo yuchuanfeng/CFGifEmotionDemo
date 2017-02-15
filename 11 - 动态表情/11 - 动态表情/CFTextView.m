@@ -12,6 +12,15 @@
 
 @implementation CFTextView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame])
+    {
+        
+    }
+    return self;
+}
+
 - (void)setAttributedText:(NSAttributedString *)attributedText
 {
     [super setAttributedText:attributedText];
@@ -22,19 +31,22 @@
     }
     
     [self.attributedText enumerateAttribute:NSAttachmentAttributeName inRange:NSMakeRange(0, self.attributedText.length) options:NSAttributedStringEnumerationReverse usingBlock:^(CFTextAttachment* value, NSRange range, BOOL * _Nonnull stop) {
-        if (value && CGRectEqualToRect(value.bounds, CGRectMake(0, 0, 60, 50))) {
+        if (value && CGRectEqualToRect(value.bounds, gifRect)) {
             self.selectedRange = range;
             CGRect rect = [self firstRectForRange:self.selectedTextRange];
-            self.selectedRange = NSMakeRange(0, 0);
+            rect.origin.y += (rect.size.height - gifRect.size.height);
+            rect.size = gifRect.size;
     
             UIImageView* imageView = [[UIImageView alloc] init];
             [self addSubview:imageView];
             imageView.frame = rect;
             imageView.image = [UIImage sd_animatedGIFNamed:value.gifName];
+//            NSLog(@"\n rect = %@ \ncount = %@", NSStringFromCGRect(rect),  [self selectionRectsForRange:self.selectedTextRange]);
+        
 //            imageView.backgroundColor = [UIColor greenColor];
         }
     }];
-
+    self.selectedRange = NSMakeRange(0, 0);
 }
 
 @end

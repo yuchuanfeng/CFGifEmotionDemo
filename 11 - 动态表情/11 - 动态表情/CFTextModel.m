@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "CFTextAttachment.h"
 
+
+
 @implementation CFTextModel
 
 - (void)setContentString:(NSString *)contentString
@@ -31,7 +33,7 @@
         
         if (gifName) {
             gifEomtionDict[NSStringFromRange(NSMakeRange(result.range.location, resultString.length))] = gifName;
-            NSLog(@"%@----%@====%@", resultString, gifName, gifEomtionDict);
+//            NSLog(@"%@----%@====%@", resultString, gifName, gifEomtionDict);
         }
     }];
     
@@ -50,7 +52,7 @@
     
     for (NSString* rangeString in ranges) {
         CFTextAttachment* attachment = [[CFTextAttachment alloc] init];
-        attachment.bounds = CGRectMake(0, 0, 60, 50);
+        attachment.bounds = gifRect;
         attachment.gifName = gifEomtionDict[rangeString];
         NSAttributedString* attachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
         [attributedString replaceCharactersInRange:NSRangeFromString(rangeString) withAttributedString:attachmentString];
@@ -58,7 +60,21 @@
     
     [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, attributedString.length)];
     [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:17] range:NSMakeRange(0, attributedString.length)];
+    
+    NSMutableParagraphStyle* paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setParagraphStyle:[NSParagraphStyle defaultParagraphStyle]];
+    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    paragraphStyle.lineSpacing = 10;
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, attributedString.length)];
+    
     self.attributedString = attributedString;
+}
+
+- (void)setAttributedString:(NSMutableAttributedString *)attributedString
+{
+    _attributedString = attributedString;
+    self.height = [attributedString boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width-40 , CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesDeviceMetrics|NSStringDrawingTruncatesLastVisibleLine context:NULL].size.height+20;
+    NSLog(@"heigt = %f", self.height);
 }
 
 @end
