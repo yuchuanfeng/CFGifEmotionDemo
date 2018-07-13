@@ -11,53 +11,89 @@
 #import "CFTextAttachment.h"
 
 
+@implementation CFTextModel {
+    NSRegularExpression *_regex;
+    NSDictionary *_mapper;
+    dispatch_semaphore_t _lock;
+}
 
-@implementation CFTextModel
+- (void)setupEmoticonMapper:(NSDictionary *)emoticonMapper {
+    _mapper = emoticonMapper.copy;
+    if (_mapper.count == 0) {
+        _regex = nil;
+    } else {
+        NSMutableString *pattern = @"(".mutableCopy;
+        NSArray *allKeys = _mapper.allKeys;
+        NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"$^?+*.,#|{}[]()\\"];
+        for (NSUInteger i = 0, max = allKeys.count; i < max; i++) {
+            NSMutableString *one = [allKeys[i] mutableCopy];
+            
+            // escape regex characters
+            for (NSUInteger ci = 0, cmax = one.length; ci < cmax; ci++) {
+                unichar c = [one characterAtIndex:ci];
+                if ([charset characterIsMember:c]) {
+                    [one insertString:@"\\" atIndex:ci];
+                    ci++;
+                    cmax++;
+                }
+            }
+            
+            [pattern appendString:one];
+            if (i != max - 1) [pattern appendString:@"|"];
+        }
+        [pattern appendString:@")"];
+        _regex = [[NSRegularExpression alloc] initWithPattern:pattern options:kNilOptions error:nil];
+    }
+}
+
+- (BOOL)parseText:(NSMutableAttributedString *)text {
+    if (text.length == 0) return NO;
+    
+    NSDictionary *mapper;
+    NSRegularExpression *regex;
+    mapper = _mapper; regex = _regex;
+    if (mapper.count == 0 || regex == nil) return NO;
+    
+    NSArray *matches = [regex matchesInString:text.string options:kNilOptions range:NSMakeRange(0, text.length)];
+    if (matches.count == 0) return NO;
+    
+    NSUInteger cutLength = 0;
+    for (NSUInteger i = 0, max = matches.count; i < max; i++) {
+        NSTextCheckingResult *one = matches[i];
+        NSRange oneRange = one.range;
+        if (oneRange.length == 0) continue;
+        oneRange.location -= cutLength;
+        NSString *subStr = [text.string substringWithRange:oneRange];
+        NSString *emoticonStr = mapper[subStr];
+        if (!emoticonStr) continue;
+        [self replaceRange:oneRange imageStr:emoticonStr contentAttr:text];
+        cutLength += oneRange.length - 1;
+    }
+    
+    return YES;
+}
+
+- (void)replaceRange: (NSRange)range imageStr: (NSString *)imageStr contentAttr: (NSMutableAttributedString *)text {
+    CFTextAttachment* attachment = [[CFTextAttachment alloc] init];
+    attachment.bounds = gifRect;
+    if ([imageStr hasPrefix:@"https://"]){ // 网络图片
+        attachment.imageUrl = imageStr;
+    }else {
+        attachment.gifName = imageStr;
+    }
+    NSAttributedString* attachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
+    [text replaceCharactersInRange:range withAttributedString:attachmentString];
+}
+
 
 - (void)setContentString:(NSString *)contentString
 {
     _contentString = contentString;
-    NSString* pattern = @"/[\u4e00-\u9fa5]{2,4}";
-    NSRegularExpression* regx = [[NSRegularExpression alloc] initWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
     NSString* path = [[NSBundle mainBundle] pathForResource:@"EmotionGifList" ofType:@"plist"];
     NSDictionary* emotionDic = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSMutableDictionary* gifEomtionDict = [[NSMutableDictionary alloc] init];
-    [regx enumerateMatchesInString:contentString options:NSMatchingReportProgress range:NSMakeRange(0, contentString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-        NSString* resultString = [contentString substringWithRange:result.range];
-        NSString* gifName = emotionDic[resultString];
-        
-        for (int i = 0; resultString.length > 2 && !gifName; i++) {
-            resultString = [resultString substringWithRange:NSMakeRange(0, resultString.length - 1)];
-            gifName = emotionDic[resultString];
-        }
-        
-        if (gifName) {
-            gifEomtionDict[NSStringFromRange(NSMakeRange(result.range.location, resultString.length))] = gifName;
-//            NSLog(@"%@----%@====%@", resultString, gifName, gifEomtionDict);
-        }
-    }];
-    
     NSMutableAttributedString* attributedString = [[NSMutableAttributedString alloc] initWithString:contentString];
-    NSMutableArray* ranges = [gifEomtionDict.allKeys mutableCopy];
-    [ranges sortUsingComparator:^NSComparisonResult(NSString* obj1, NSString* obj2) {
-        NSRange range1 = NSRangeFromString(obj1);
-        NSRange range2 = NSRangeFromString(obj2);
-        
-        if (range1.location < range2.location) {
-            return NSOrderedDescending;
-        }
-        
-        return NSOrderedAscending;
-    }];
-    
-    for (NSString* rangeString in ranges) {
-        CFTextAttachment* attachment = [[CFTextAttachment alloc] init];
-        attachment.bounds = gifRect;
-        attachment.gifName = gifEomtionDict[rangeString];
-        NSAttributedString* attachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
-        [attributedString replaceCharactersInRange:NSRangeFromString(rangeString) withAttributedString:attachmentString];
-    }
-    
+    [self setupEmoticonMapper:emotionDic];
+    [self parseText:attributedString];
     [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, attributedString.length)];
     [attributedString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:17] range:NSMakeRange(0, attributedString.length)];
     

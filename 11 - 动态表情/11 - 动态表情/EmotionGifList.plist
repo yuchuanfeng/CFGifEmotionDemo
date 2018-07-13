@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>/网络图片2</key>
+	<string>https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1532075919&amp;di=7bf39afd3425f61a4cc422873e3d4bbc&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fxa.wanmei.com%2Fresources%2Fjpg%2F150707%2F10071436234691803.jpg</string>
+	<key>/网络图片1</key>
+	<string>https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3273441300,1272145098&amp;fm=27&amp;gp=0.jpg</string>
 	<key>/点头</key>
 	<string>gifEmotion_6</string>
 	<key>/我撞</key>

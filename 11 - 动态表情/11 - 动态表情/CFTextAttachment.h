@@ -12,4 +12,6 @@
 
 @interface CFTextAttachment : NSTextAttachment
 @property (nonatomic, copy) NSString *gifName;
+@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, weak) UIView *containerView;
 @end

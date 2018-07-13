@@ -20,7 +20,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "11 - &#x52a8;&#x6001;&#x8868;&#x60c5;/AppDelegate.m"
-            timestampString = "508836586.319367"
+            timestampString = "553163241.981501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -31,7 +31,7 @@
                <BreakpointActionProxy
                   ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
                   <ActionContent
-                     consoleCommand = "reveal_load_sim">
+                     consoleCommand = "reveal_load_sim_oc">
                   </ActionContent>
                </BreakpointActionProxy>
             </Actions>

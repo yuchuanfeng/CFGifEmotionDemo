@@ -29,9 +29,9 @@
         CFTextModel* model = [[CFTextModel alloc] init];
         if (i % 2)
         {
-           model.contentString = @"/咸蛋超人“没人在乎你怎样在深夜痛哭，/飞翔/飞翔/飞翔也没人在乎你辗转反侧的要熬几个/我撞秋。/我撞";
+           model.contentString = @"/咸蛋超人“没人在乎你怎样在深夜痛哭，/飞翔/网络图片2/飞翔也没人在乎你辗转反侧的要熬几个这是个网络下载图片这是个网络下载图片/网络图片1这是个网络下载图片这是个网络下载图片这是个网络下载图片秋。/我撞";
         }else{
-            model.contentString = @"/点头等你明白了这个道理，便不会再在人前矫情，/我撞四处诉说以求宽慰。/烧烤”当你知道了许多真实、虚假的东西，/我撞也就没有那么多酸情了。你越来越沉默，越来越不想说。/心烦";
+            model.contentString = @"/点头等你明白了这个道理，这是个网络下载图片/网络图片1便不会再在人前矫情，/我撞四处诉说以求宽慰。/烧烤”当你知道了许多真实、虚假的东西，这是个网络下载图片这是个网络下载图片/网络图片2也就没有那么多酸情了。你越来越沉默，越来越不想说。/心烦";
             [model.attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0, model.attributedString.length)];
         }
         [self.models addObject:model];
