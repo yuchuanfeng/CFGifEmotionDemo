@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,7 +46,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="NEXT"/>
                                 <connections>
-                                    <segue destination="Elk-U9-n1Q" kind="show" id="1f9-n8-2UV"/>
+                                    <segue destination="Elk-U9-n1Q" kind="show" id="F1p-xC-MhN"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -59,7 +60,7 @@
         <scene sceneID="qT3-Lv-Q3x">
             <objects>
                 <tableViewController id="Elk-U9-n1Q" customClass="ViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fVC-gt-9i5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fVC-gt-9i5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,79 +72,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2b-H7-Fcw" customClass="CFTextView">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <attributedString key="attributedText">
-                                                <fragment content="Lorem ipsum dolor sit er elit lamet">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="14"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=",">
-                                                    <attributes>
-                                                        <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=" consectetaur cillium adipisicing pecu">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="14"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=",">
-                                                    <attributes>
-                                                        <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=" sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="14"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=",">
-                                                    <attributes>
-                                                        <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment>
-                                                    <string key="content"> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</string>
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="14"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content=",">
-                                                    <attributes>
-                                                        <font key="NSFont" size="14" name=".PingFangSC-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment>
-                                                    <string key="content"> sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="14"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gS4-oT-o59" userLabel="label" customClass="CFLabel">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="E2b-H7-Fcw" secondAttribute="bottom" id="PRh-Me-35X"/>
-                                        <constraint firstItem="E2b-H7-Fcw" firstAttribute="leading" secondItem="hhV-z7-em4" secondAttribute="leading" id="fY2-Vb-08C"/>
-                                        <constraint firstAttribute="trailing" secondItem="E2b-H7-Fcw" secondAttribute="trailing" id="hk5-or-7mj"/>
-                                        <constraint firstItem="E2b-H7-Fcw" firstAttribute="top" secondItem="hhV-z7-em4" secondAttribute="top" id="yYW-Tr-V1j"/>
+                                        <constraint firstItem="gS4-oT-o59" firstAttribute="top" secondItem="hhV-z7-em4" secondAttribute="topMargin" id="1JB-u5-yt3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gS4-oT-o59" secondAttribute="trailing" id="aVt-9M-qD7"/>
+                                        <constraint firstItem="gS4-oT-o59" firstAttribute="leading" secondItem="hhV-z7-em4" secondAttribute="leadingMargin" id="ixP-bs-CSU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gS4-oT-o59" secondAttribute="bottom" id="qYj-nv-vT8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="textView" destination="E2b-H7-Fcw" id="PcA-Hi-U0I"/>
+                                    <outlet property="label" destination="gS4-oT-o59" id="H8d-j1-yUc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

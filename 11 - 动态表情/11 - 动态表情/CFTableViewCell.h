@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CFTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end

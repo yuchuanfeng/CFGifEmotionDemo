@@ -15,7 +15,7 @@
 		860F857C1C36501F00D353C2 /* gifEmotion_5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 860F85751C36501F00D353C2 /* gifEmotion_5.gif */; };
 		860F857D1C36501F00D353C2 /* gifEmotion_6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 860F85761C36501F00D353C2 /* gifEmotion_6.gif */; };
 		8627DCDE1E5419AF00481CCA /* CFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8627DCDD1E5419AF00481CCA /* CFTableViewCell.m */; };
-		864A419C1C3221A200839E11 /* CFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A419B1C3221A200839E11 /* CFTextView.m */; };
+		864A419C1C3221A200839E11 /* CFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A419B1C3221A200839E11 /* CFLabel.m */; };
 		864A419F1C32220E00839E11 /* CFTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A419E1C32220E00839E11 /* CFTextModel.m */; };
 		864A41A11C32227300839E11 /* EmotionGifList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864A41A01C32227300839E11 /* EmotionGifList.plist */; };
 		864A41BF1C32613300839E11 /* CFTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A41BE1C32613300839E11 /* CFTextAttachment.m */; };
@@ -70,8 +70,8 @@
 		860F85761C36501F00D353C2 /* gifEmotion_6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_6.gif; sourceTree = "<group>"; };
 		8627DCDC1E5419AF00481CCA /* CFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTableViewCell.h; sourceTree = "<group>"; };
 		8627DCDD1E5419AF00481CCA /* CFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTableViewCell.m; sourceTree = "<group>"; };
-		864A419A1C3221A200839E11 /* CFTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTextView.h; sourceTree = "<group>"; };
-		864A419B1C3221A200839E11 /* CFTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTextView.m; sourceTree = "<group>"; };
+		864A419A1C3221A200839E11 /* CFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFLabel.h; sourceTree = "<group>"; };
+		864A419B1C3221A200839E11 /* CFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFLabel.m; sourceTree = "<group>"; };
 		864A419D1C32220E00839E11 /* CFTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTextModel.h; sourceTree = "<group>"; };
 		864A419E1C32220E00839E11 /* CFTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTextModel.m; sourceTree = "<group>"; };
 		864A41A01C32227300839E11 /* EmotionGifList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmotionGifList.plist; sourceTree = "<group>"; };
@@ -195,8 +195,8 @@
 				864A41BE1C32613300839E11 /* CFTextAttachment.m */,
 				864A419D1C32220E00839E11 /* CFTextModel.h */,
 				864A419E1C32220E00839E11 /* CFTextModel.m */,
-				864A419A1C3221A200839E11 /* CFTextView.h */,
-				864A419B1C3221A200839E11 /* CFTextView.m */,
+				864A419A1C3221A200839E11 /* CFLabel.h */,
+				864A419B1C3221A200839E11 /* CFLabel.m */,
 				8627DCDC1E5419AF00481CCA /* CFTableViewCell.h */,
 				8627DCDD1E5419AF00481CCA /* CFTableViewCell.m */,
 				86DC36531C30DCEB0045F2C6 /* Main.storyboard */,
@@ -423,7 +423,7 @@
 				86DC369D1C30DD0D0045F2C6 /* SDWebImageCompat.m in Sources */,
 				86DC364F1C30DCEB0045F2C6 /* AppDelegate.m in Sources */,
 				86DC369B1C30DD0D0045F2C6 /* NSData+ImageContentType.m in Sources */,
-				864A419C1C3221A200839E11 /* CFTextView.m in Sources */,
+				864A419C1C3221A200839E11 /* CFLabel.m in Sources */,
 				86DC36A01C30DD0D0045F2C6 /* SDWebImageDownloaderOperation.m in Sources */,
 				8627DCDE1E5419AF00481CCA /* CFTableViewCell.m in Sources */,
 				864A41BF1C32613300839E11 /* CFTextAttachment.m in Sources */,

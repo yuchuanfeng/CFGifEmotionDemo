@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "UIImage+GIF.h"
 #import "CFTextModel.h"
-#import "CFTextView.h"
+#import "CFLabel.h"
 #import "CFTableViewCell.h"
 
 @interface ViewController ()
@@ -48,7 +48,7 @@
 {
     CFTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     CFTextModel* model = self.models[indexPath.row];
-    cell.textView.attributedText = model.attributedString;
+    cell.label.attributedText = model.attributedString;
     return cell;
 }
 

@@ -9,7 +9,6 @@
 #import "CFTextAttachment.h"
 #import "UIImage+GIF.h"
 #import "UIImageView+WebCache.h"
-
 @interface CFTextAttachment()
 @property (nonatomic, strong) UIImageView *imageView;
 @end
@@ -19,6 +18,7 @@
 - (UIImageView *)imageView{
     if (_imageView == nil){
         _imageView = [[UIImageView alloc] init];
+        _imageView.backgroundColor = [UIColor redColor];
     }
     return _imageView;
 }
@@ -40,5 +40,15 @@
     
     [self.containerView addSubview:_imageView];
     return  image;
+}
+
+- (void)reset {
+    [_imageView removeFromSuperview];
+}
+
+- (void)dealloc
+{
+    [_imageView removeFromSuperview];
+    NSLog(@"dealloc-----");
 }
 @end

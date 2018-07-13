@@ -14,4 +14,7 @@
 @property (nonatomic, copy) NSString *gifName;
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, weak) UIView *containerView;
+
+- (void)reset;
+
 @end

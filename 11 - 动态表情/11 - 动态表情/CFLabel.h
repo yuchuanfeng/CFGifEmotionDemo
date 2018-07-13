@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CFTextView : UITextView
+@interface CFLabel : UILabel
 
 @end
