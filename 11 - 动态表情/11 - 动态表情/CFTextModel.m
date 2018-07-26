@@ -110,7 +110,7 @@
 {
     _attributedString = attributedString;
     self.height = [attributedString boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width-40 , CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesDeviceMetrics|NSStringDrawingTruncatesLastVisibleLine context:NULL].size.height+20;
-    NSLog(@"heigt = %f", self.height);
+//    NSLog(@"heigt = %f", self.height);
 }
 
 @end
