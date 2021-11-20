@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>/网络图片2</key>
+	<string>https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.962.net%2Fup%2F2020-2%2F2020220165850653750.jpg&amp;refer=http%3A%2F%2Fpic.962.net&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1639984378&amp;t=69ce93543c5e6a0073111c9ceffcdd78</string>
+	<key>/网络图片1</key>
+	<string>https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201808%2F02%2F20180802031801_v5fdh.thumb.400_0.jpeg&amp;refer=http%3A%2F%2Fc-ssl.duitang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1639984398&amp;t=51b8d16f1130ca766288a2a368d00bcb</string>
+	<key>/点头</key>
+	<string>gifEmotion_6</string>
+	<key>/我撞</key>
+	<string>gifEmotion_5</string>
+	<key>/烧烤</key>
+	<string>gifEmotion_4</string>
+	<key>/奥特曼</key>
+	<string>gifEmotion_3</string>
+	<key>/咸蛋超人</key>
+	<string>gifEmotion_2</string>
+	<key>/飞翔</key>
+	<string>gifEmotion_1</string>
+	<key>/心烦</key>
+	<string>gifEmotion_0</string>
+</dict>
+</plist>
