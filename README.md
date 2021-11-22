@@ -5,7 +5,7 @@
 
 ### 效果如下：
 
-![image](https://github.com/yuchuanfeng/CFGifEmotionDemo/blob/master/Untitled.gif)
+![image](https://github.com/yuchuanfeng/CFGifEmotionDemo/blob/master/lizi01.gif)
 
 ### 更新记录（2021-11）
 优化代码 + 使用pod依赖
