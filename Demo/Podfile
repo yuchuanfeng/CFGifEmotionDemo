@@ -6,8 +6,8 @@ target 'Demo' do
   use_frameworks!
 
   # Pods for Demo
-  pod 'YYText'
-  pod 'DEText', :path => '../'
+#  pod 'YYText'
+#  pod 'DEText', :path => '../'
   pod 'SDWebImage'
 #  pod 'YYWebImage'
 

@@ -9,7 +9,7 @@
 #import "CFTextModel.h"
 #import <UIKit/UIKit.h>
 #import <SDWebImage/SDWebImage.h>
-#import <DEText/NSMutableAttributedString+DEText.h>
+//#import <DEText/NSMutableAttributedString+DEText.h>
 
 @interface CFTextModel ()
 @property (nonatomic, strong, class, readonly) NSMutableDictionary *gifImageCache;
@@ -81,23 +81,23 @@
 }
 
 - (void)replaceRange: (NSRange)range imageStr: (NSString *)imageStr contentAttr: (NSMutableAttributedString *)text {
-    NSMutableAttributedString *attr = [NSMutableAttributedString de_attachmentStringWithContentViewBlock:^UIView *{
-        UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.backgroundColor = [UIColor redColor];
-        if ([imageStr hasPrefix:@"https://"]){ // 网络图片
-            [imageView sd_setImageWithURL:[NSURL URLWithString:imageStr]];
-        }else {
-            UIImage *gifImage = CFTextModel.gifImageCache[imageStr];
-            if (!gifImage) {
-                NSString *gifPath = [[NSBundle mainBundle] pathForResource:imageStr ofType:@"gif"];
-                NSData *gifData = [NSData dataWithContentsOfFile:gifPath];
-                gifImage = [UIImage sd_imageWithGIFData:gifData];
-                CFTextModel.gifImageCache[imageStr] = gifImage;
-            }
-            imageView.image = gifImage;
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    attachment.bounds = CGRectMake(0, 0, 60, 50);
+    if ([imageStr hasPrefix:@"https://"]){ // 网络图片
+        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:imageStr] completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
+            attachment.image = image;
+        }];
+    }else {
+        UIImage *gifImage = CFTextModel.gifImageCache[imageStr];
+        if (!gifImage) {
+            NSString *gifPath = [[NSBundle mainBundle] pathForResource:imageStr ofType:@"gif"];
+            NSData *gifData = [NSData dataWithContentsOfFile:gifPath];
+            gifImage = [UIImage sd_imageWithGIFData:gifData];
+            CFTextModel.gifImageCache[imageStr] = gifImage;
         }
-        return imageView;
-    } attachmentSize:CGSizeMake(50, 50) alignment:DETextVerticalAlignmentBottom];
+        attachment.image = gifImage;
+    }
+    NSAttributedString *attr = [NSAttributedString attributedStringWithAttachment:attachment];
     [text replaceCharactersInRange:range withAttributedString:attr];
 }
 
