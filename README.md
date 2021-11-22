@@ -6,4 +6,4 @@
 优点：使用简单、无内存问题
 
 ### gif表情图文混排demo
-![image](https://github.com/yuchuanfeng/CFGifEmotionDemo/blob/master/lizi02.gif)
+![image](https://github.com/yuchuanfeng/CFGifEmotionDemo/blob/NSAttachment/lizi03.gif)
