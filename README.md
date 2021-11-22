@@ -10,7 +10,3 @@
 
 总结：使用YYText实现gif图文混排，适合图文相对简单，内容不是很多，且不使用重用机制（cell）的UI组件中使用
 
-### 效果如下：
-
-![image](https://github.com/yuchuanfeng/CFGifEmotionDemo/blob/master/Untitled.gif)
-
