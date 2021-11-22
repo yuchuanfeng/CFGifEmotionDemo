@@ -8,10 +8,12 @@
 
 #import "CFTextModel.h"
 #import <UIKit/UIKit.h>
-#import <YYText/YYText.h>
 #import <SDWebImage/SDWebImage.h>
-//#import "CFTextAttachment.h"
+#import <DEText/NSMutableAttributedString+DEText.h>
 
+@interface CFTextModel ()
+@property (nonatomic, strong, class, readonly) NSMutableDictionary *gifImageCache;
+@end
 
 @implementation CFTextModel {
     NSRegularExpression *_regex;
@@ -56,7 +58,7 @@
     mapper = _mapper; regex = _regex;
     if (mapper.count == 0 || regex == nil) return NO;
     
-    NSArray *matches = [regex matchesInString:text.string options:kNilOptions range:NSMakeRange(0, text.length)];
+    NSArray *matches = [regex matchesInString:text.string options:kNilOptions range:NSMakeRange(0, text.string.length)];
     if (matches.count == 0) return NO;
     
     NSUInteger cutLength = 0;
@@ -65,6 +67,9 @@
         NSRange oneRange = one.range;
         if (oneRange.length == 0) continue;
         oneRange.location -= cutLength;
+//        if (oneRange.location < 0 || oneRange.location > text.string.length - 2 || oneRange.location + oneRange.length > text.string.length - 1) {
+//            continue;
+//        }
         NSString *subStr = [text.string substringWithRange:oneRange];
         NSString *emoticonStr = mapper[subStr];
         if (!emoticonStr) continue;
@@ -76,20 +81,24 @@
 }
 
 - (void)replaceRange: (NSRange)range imageStr: (NSString *)imageStr contentAttr: (NSMutableAttributedString *)text {
-//    CFTextAttachment* attachment = [[CFTextAttachment alloc] init];
-//    attachment.bounds = gifRect;
-    UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.backgroundColor = [UIColor redColor];
-    if ([imageStr hasPrefix:@"https://"]){ // 网络图片
-//        attachment.imageUrl = imageStr;
-        [imageView sd_setImageWithURL:[NSURL URLWithString:imageStr]];
-    }else {
-//        attachment.gifName = imageStr;
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:imageStr ofType:@"gif"];
-        imageView.image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:filePath]];
-    }
-    NSAttributedString* attachmentString = [NSAttributedString yy_attachmentStringWithContent:imageView contentMode:0 attachmentSize:CGSizeMake(50, 50) alignToFont:text.yy_font alignment:YYTextVerticalAlignmentCenter];
-    [text replaceCharactersInRange:range withAttributedString:attachmentString];
+    NSMutableAttributedString *attr = [NSMutableAttributedString de_attachmentStringWithContentViewBlock:^UIView *{
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.backgroundColor = [UIColor redColor];
+        if ([imageStr hasPrefix:@"https://"]){ // 网络图片
+            [imageView sd_setImageWithURL:[NSURL URLWithString:imageStr]];
+        }else {
+            UIImage *gifImage = CFTextModel.gifImageCache[imageStr];
+            if (!gifImage) {
+                NSString *gifPath = [[NSBundle mainBundle] pathForResource:imageStr ofType:@"gif"];
+                NSData *gifData = [NSData dataWithContentsOfFile:gifPath];
+                gifImage = [UIImage sd_imageWithGIFData:gifData];
+                CFTextModel.gifImageCache[imageStr] = gifImage;
+            }
+            imageView.image = gifImage;
+        }
+        return imageView;
+    } attachmentSize:CGSizeMake(50, 50) alignment:DETextVerticalAlignmentBottom];
+    [text replaceCharactersInRange:range withAttributedString:attr];
 }
 
 
@@ -119,5 +128,11 @@
     self.height = [attributedString boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width-40 , CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesDeviceMetrics|NSStringDrawingTruncatesLastVisibleLine context:NULL].size.height+20;
 //    NSLog(@"heigt = %f", self.height);
 }
-
++ (NSMutableDictionary *)gifImageCache {
+    static NSMutableDictionary *_gifImageCache;
+    if (!_gifImageCache) {
+        _gifImageCache = [NSMutableDictionary dictionary];
+    }
+    return _gifImageCache;
+}
 @end

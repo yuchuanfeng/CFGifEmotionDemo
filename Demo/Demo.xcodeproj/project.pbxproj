@@ -17,7 +17,6 @@
 		8627DCDE1E5419AF00481CCA /* CFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8627DCDD1E5419AF00481CCA /* CFTableViewCell.m */; };
 		864A419F1C32220E00839E11 /* CFTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A419E1C32220E00839E11 /* CFTextModel.m */; };
 		864A41A11C32227300839E11 /* EmotionGifList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864A41A01C32227300839E11 /* EmotionGifList.plist */; };
-		86A113222748D05200A9817E /* CFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A113212748D05200A9817E /* CFLabel.m */; };
 		86DC364C1C30DCEB0045F2C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC364B1C30DCEB0045F2C6 /* main.m */; };
 		86DC364F1C30DCEB0045F2C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC364E1C30DCEB0045F2C6 /* AppDelegate.m */; };
 		86DC36521C30DCEB0045F2C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC36511C30DCEB0045F2C6 /* ViewController.m */; };
@@ -42,8 +41,6 @@
 		864A419D1C32220E00839E11 /* CFTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTextModel.h; sourceTree = "<group>"; };
 		864A419E1C32220E00839E11 /* CFTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTextModel.m; sourceTree = "<group>"; };
 		864A41A01C32227300839E11 /* EmotionGifList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmotionGifList.plist; sourceTree = "<group>"; };
-		86A113212748D05200A9817E /* CFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFLabel.m; sourceTree = "<group>"; };
-		86A113232748D06000A9817E /* CFLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFLabel.h; sourceTree = "<group>"; };
 		86DC36471C30DCEB0045F2C6 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DC364B1C30DCEB0045F2C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86DC364D1C30DCEB0045F2C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,8 +113,6 @@
 				86DC364E1C30DCEB0045F2C6 /* AppDelegate.m */,
 				86DC36501C30DCEB0045F2C6 /* ViewController.h */,
 				86DC36511C30DCEB0045F2C6 /* ViewController.m */,
-				86A113232748D06000A9817E /* CFLabel.h */,
-				86A113212748D05200A9817E /* CFLabel.m */,
 				864A419D1C32220E00839E11 /* CFTextModel.h */,
 				864A419E1C32220E00839E11 /* CFTextModel.m */,
 				8627DCDC1E5419AF00481CCA /* CFTableViewCell.h */,
@@ -257,19 +252,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DEText/DEText.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
-				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
-				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DEText.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -288,7 +279,6 @@
 				8627DCDE1E5419AF00481CCA /* CFTableViewCell.m in Sources */,
 				86DC364C1C30DCEB0045F2C6 /* main.m in Sources */,
 				864A419F1C32220E00839E11 /* CFTextModel.m in Sources */,
-				86A113222748D05200A9817E /* CFLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

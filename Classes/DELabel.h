@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <YYText/YYText.h>
 
-@interface CFLabel : YYLabel
+@interface DELabel : UILabel
 
 @end

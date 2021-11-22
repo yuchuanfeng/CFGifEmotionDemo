@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CFLabel.h"
+#import <DEText/DEText.h>
 
 @interface CFTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet YYLabel *label;
+@property (weak, nonatomic) IBOutlet DELabel *label;
 
 @end

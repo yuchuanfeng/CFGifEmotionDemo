@@ -7,7 +7,8 @@ target 'Demo' do
 
   # Pods for Demo
   pod 'YYText'
+  pod 'DEText', :path => '../'
   pod 'SDWebImage'
-  pod 'YYWebImage'
+#  pod 'YYWebImage'
 
 end

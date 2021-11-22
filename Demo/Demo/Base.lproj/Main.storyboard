@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -70,20 +69,22 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egU-On-zgZ" customClass="YYLabel">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXX-8U-VUQ" customClass="DELabel">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="egU-On-zgZ" secondAttribute="trailing" id="boo-MP-dgc"/>
-                                        <constraint firstAttribute="bottom" secondItem="egU-On-zgZ" secondAttribute="bottom" id="ehw-gg-CZm"/>
-                                        <constraint firstItem="egU-On-zgZ" firstAttribute="leading" secondItem="hhV-z7-em4" secondAttribute="leading" id="rTt-X1-kkd"/>
-                                        <constraint firstItem="egU-On-zgZ" firstAttribute="top" secondItem="hhV-z7-em4" secondAttribute="top" id="z53-ke-wPu"/>
+                                        <constraint firstItem="sXX-8U-VUQ" firstAttribute="leading" secondItem="hhV-z7-em4" secondAttribute="leadingMargin" id="3aS-jZ-faz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="sXX-8U-VUQ" secondAttribute="trailing" id="3c3-4w-XfL"/>
+                                        <constraint firstItem="sXX-8U-VUQ" firstAttribute="bottom" secondItem="hhV-z7-em4" secondAttribute="bottomMargin" id="5DO-Mf-1hm"/>
+                                        <constraint firstItem="sXX-8U-VUQ" firstAttribute="top" secondItem="hhV-z7-em4" secondAttribute="topMargin" id="Xs9-Dx-9me"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="label" destination="egU-On-zgZ" id="aP8-QV-mNo"/>
+                                    <outlet property="label" destination="sXX-8U-VUQ" id="4yI-p1-nWX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -98,9 +99,4 @@
             <point key="canvasLocation" x="146" y="226"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
