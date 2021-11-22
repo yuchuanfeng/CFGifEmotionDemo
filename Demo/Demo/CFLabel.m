@@ -21,25 +21,10 @@
 //    return self;
 //}
 //
-//- (void)setAttributedText:(NSAttributedString *)attributedText
-//{
-//    if (self.attributedText != nil){
-//        [self.attributedText enumerateAttribute:NSAttachmentAttributeName inRange:NSMakeRange(0, self.attributedText.length) options:NSAttributedStringEnumerationReverse usingBlock:^(CFTextAttachment* value, NSRange range, BOOL * _Nonnull stop) {
-//            if (value && CGRectEqualToRect(value.bounds, gifRect)) {
-//                [value reset];
-//            }
-//        }];
-//    }
-//    
-//    [super setAttributedText:attributedText];
-//    
-//    [self.attributedText enumerateAttribute:NSAttachmentAttributeName inRange:NSMakeRange(0, self.attributedText.length) options:NSAttributedStringEnumerationReverse usingBlock:^(CFTextAttachment* value, NSRange range, BOOL * _Nonnull stop) {
-//        if (value && CGRectEqualToRect(value.bounds, gifRect)) {
-//            value.containerView = self;
-//        }
-//    }];
-//    
-//    [self setNeedsDisplay];
-//}
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
+    NSLog(@"%@", @(self.subviews.count));
+}
 
 @end
