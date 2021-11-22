@@ -1,15 +1,9 @@
 # CFGifEmotionDemo
 
+## 使用系统NSAttachment实现 
+
+缺点：无法实现动图及加载网络图片  
+优点：使用简单、无内存问题
+
 ### gif表情图文混排demo
-在table中使用时，不会使内存暴增
 
-### 效果如下：
-
-![image](https://github.com/yuchuanfeng/CFGifEmotionDemo/blob/master/Untitled.gif)
-
-### 更新记录（2021-11）
-优化代码 + 使用pod依赖
-
-### 更新记录（2018-07）
-- 图文混排支持网络图片，传入图片URL即可显示（需要借助SDWebImage）
-- 显示控件支持UILabel
