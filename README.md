@@ -7,6 +7,10 @@
 
 ![image](https://github.com/yuchuanfeng/CFGifEmotionDemo/blob/master/lizi01.gif)
 
+### 更新记录（2024-06）
+增加 CPTextView，以支持 textView 编辑attachment
+参考自：https://github.com/vlas-voloshin/SubviewAttachingTextView
+
 ### 更新记录（2021-11）
 优化代码 + 使用pod依赖
 
