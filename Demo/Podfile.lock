@@ -1,18 +1,24 @@
 PODS:
-  - DEText (0.0.1)
+  - DEText (0.0.1):
+    - YYCategories
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
   - SDWebImage/Core (5.12.1)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
   - YYText (1.0.7)
 
 DEPENDENCIES:
   - DEText (from `../`)
   - SDWebImage
+  - YYCategories
   - YYText
 
 SPEC REPOS:
   trunk:
     - SDWebImage
+    - YYCategories
     - YYText
 
 EXTERNAL SOURCES:
@@ -20,10 +26,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DEText: a89256693cc0e44f6823dd4218eb3432e7121cd9
+  DEText: 16659afad58bf61c8bff0de1c7b941464b1f4e3d
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: ddecaed35eadad8d7af81e77ce8b860e2b4621e0
+PODFILE CHECKSUM: 8e4209658a427ba04a8e570d35daf912be7ca4c4
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.15.2
