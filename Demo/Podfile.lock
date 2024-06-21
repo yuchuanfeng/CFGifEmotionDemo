@@ -1,6 +1,8 @@
 PODS:
   - DEText (0.0.1):
+    - Masonry
     - YYCategories
+  - Masonry (1.1.0)
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
   - SDWebImage/Core (5.12.1)
@@ -11,12 +13,14 @@ PODS:
 
 DEPENDENCIES:
   - DEText (from `../`)
+  - Masonry
   - SDWebImage
   - YYCategories
   - YYText
 
 SPEC REPOS:
   trunk:
+    - Masonry
     - SDWebImage
     - YYCategories
     - YYText
@@ -26,11 +30,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DEText: 16659afad58bf61c8bff0de1c7b941464b1f4e3d
+  DEText: 3380c9e1cc09c6c7275fb379e2c4f3e9d5f323cd
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 8e4209658a427ba04a8e570d35daf912be7ca4c4
+PODFILE CHECKSUM: c7ad3ea90f215960768b6d299e8b89db44f4c76c
 
 COCOAPODS: 1.15.2

@@ -10,5 +10,6 @@ target 'Demo' do
   pod 'DEText', :path => '../'
   pod 'SDWebImage'
   pod 'YYCategories'
-
+  pod 'Masonry'
+  
 end
